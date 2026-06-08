@@ -1,0 +1,79 @@
+2026-06-08 11:10:04,055 INFO DEMO as-of=2026-06-05: building 40-symbol US/JP validation universe
+2026-06-08 11:10:04,083 INFO Quality gate: accepted=36 rejected=4 reasons={'insufficient_history': 2, 'not_downloaded': 2}
+2026-06-08 11:10:04,083 INFO Regimes: US=BULL JP=UNKNOWN => advisory_exposure=60% (UNKNOWN is not BULL)
+2026-06-08 11:10:04,083 INFO Selected: US=6 JP=6; weight range=5.56%..11.25%
+2026-06-08 11:10:04,083 INFO Sector counts: {'Semiconductors': 2, 'AI/Software': 3, 'Consumer': 2, 'Financials': 3, 'Industrials': 2}
+2026-06-08 11:10:04,083 WARNING Candidate-shortage control probe: US: eligible candidates 3/6; portfolio is incomplete
+2026-06-08 11:10:04,083 WARNING FX unavailable: 6 US orders BLOCKED_FX_MISSING; 6 JP orders REVIEW_REQUIRED
+2026-06-08 11:10:04,083 INFO Validation checks: {'excluded_symbols_reported': True, 'unknown_not_treated_as_bull': True, 'six_selected_per_region': True, 'candidate_shortage_warning_probe': True, 'weights_within_4_to_12_pct': True, 'jp_orders_in_100_share_lots': True, 'us_orders_blocked_when_fx_missing': True, 'not_only_low_volatility_quartile': True, 'no_sector_has_four_or_more': True}
+2026-06-08 11:10:04,083 INFO Outputs written to final_validation_output
+{
+  "as_of": "2026-06-05",
+  "generated_on": "2026-06-08",
+  "mode": "portable_demo_final_validation",
+  "config": {
+    "history_days": 550,
+    "min_observations": 274,
+    "skip_recent": 21,
+    "stale_business_days": 5,
+    "max_missing_ratio": 0.03,
+    "selected_per_region": 6,
+    "max_weight": 0.12,
+    "min_weight": 0.04,
+    "sector_warning_threshold": 4,
+    "total_budget_jpy": 4500000,
+    "score_momentum_weight": 0.55,
+    "score_quality_weight": 0.25,
+    "score_low_vol_weight": 0.2
+  },
+  "universe": {
+    "US": 20,
+    "JP": 20
+  },
+  "quality_summary": {
+    "accepted": 36,
+    "rejected": 4,
+    "rejection_reasons": {
+      "insufficient_history": 2,
+      "not_downloaded": 2
+    }
+  },
+  "regimes": {
+    "US": "BULL",
+    "JP": "UNKNOWN"
+  },
+  "unknown_regime_policy": "UNKNOWN never maps to BULL; advisory exposure is capped below 100%",
+  "advisory_exposure": 0.6,
+  "fx_usdjpy": null,
+  "order_policy": "All rows require human review; US rows stop when FX is missing",
+  "order_status_summary": {
+    "BLOCKED_FX_MISSING": 6,
+    "REVIEW_REQUIRED": 6
+  },
+  "selection_summary": {
+    "US": 6,
+    "JP": 6
+  },
+  "sector_counts": {
+    "Semiconductors": 2,
+    "AI/Software": 3,
+    "Consumer": 2,
+    "Financials": 3,
+    "Industrials": 2
+  },
+  "warnings": [
+    "CONTROL_PROBE: US: eligible candidates 3/6; portfolio is incomplete"
+  ],
+  "candidate_shortage_probe_warning": "US: eligible candidates 3/6; portfolio is incomplete",
+  "validation_checks": {
+    "excluded_symbols_reported": true,
+    "unknown_not_treated_as_bull": true,
+    "six_selected_per_region": true,
+    "candidate_shortage_warning_probe": true,
+    "weights_within_4_to_12_pct": true,
+    "jp_orders_in_100_share_lots": true,
+    "us_orders_blocked_when_fx_missing": true,
+    "not_only_low_volatility_quartile": true,
+    "no_sector_has_four_or_more": true
+  }
+}
